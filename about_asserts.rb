@@ -7,13 +7,13 @@ class AboutAsserts < Neo::Koan
 
   # We shall contemplate truth by testing reality, via asserts.
   def test_assert_truth
-    assert false                # This should be true
+    assert true                # This should be true
   end
 
   # Enlightenment may be more easily achieved with appropriate
   # messages.
   def test_assert_with_message
-    assert false, "This should be true -- Please fix this"
+    assert true, "This should be true -- Please fix this"
   end
 
   # To understand reality, we must compare our expectations against
