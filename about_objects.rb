@@ -38,6 +38,9 @@ class AboutObjects < Neo::Koan
 
     # THINK ABOUT IT:
     # What pattern do the object IDs for small integers follow? Answer: shifts one bit left.
+    #
+    # ** I"m still a little unclear on this part, I'll continue to read into what Fixnum and VALUE are and how they relate to .object_id **
+    #
   end
 
   def test_clone_creates_a_different_object
