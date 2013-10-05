@@ -3,36 +3,36 @@ require File.expand_path(File.dirname(__FILE__) + '/neo')
 class AboutStrings < Neo::Koan
   def test_double_quoted_strings_are_strings
     string = "Hello, World"
-    assert_equal __, string.is_a?(String)
+    assert_equal true, string.is_a?(String) #Yes. Hello World is a string
   end
 
   def test_single_quoted_strings_are_also_strings
     string = 'Goodbye, World'
-    assert_equal __, string.is_a?(String)
+    assert_equal true, string.is_a?(String) #single quotes are also ok
   end
 
   def test_use_single_quotes_to_create_string_with_double_quotes
     string = 'He said, "Go Away."'
-    assert_equal __, string
+    assert_equal "He said, \"Go Away.\"", string #But now we run into the problem of quotes within quotes
   end
 
   def test_use_double_quotes_to_create_strings_with_single_quotes
     string = "Don't"
-    assert_equal __, string
+    assert_equal 'Don\'t', string           #So we start using \ escape sequence
   end
 
   def test_use_backslash_for_those_hard_cases
     a = "He said, \"Don't\""
     b = 'He said, "Don\'t"'
-    assert_equal __, a == b
+    assert_equal true, a == b #here is an example where we exit out to make a double or single quote
   end
 
   def test_use_flexible_quoting_to_handle_really_hard_cases
     a = %(flexible quotes can handle both ' and " characters)
     b = %!flexible quotes can handle both ' and " characters!
     c = %{flexible quotes can handle both ' and " characters}
-    assert_equal __, a == b
-    assert_equal __, a == c
+    assert_equal true, a == b
+    assert_equal true, a == c
   end
 
   def test_flexible_quotes_can_handle_multiple_lines
