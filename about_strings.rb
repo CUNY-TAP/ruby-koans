@@ -40,9 +40,14 @@ class AboutStrings < Neo::Koan
 It was the best of times,
 It was the worst of times.
 }
-    assert_equal __, long_string.length
-    assert_equal __, long_string.lines.count
-    assert_equal __, long_string[0,1]
+#\n - 1
+#It was the best of times,\n - 26
+#It was the worst of times. - 27
+#Length = 1 + 26 + 27 = 54
+
+    assert_equal 54, long_string.length       #total length of the strings
+    assert_equal 3, long_string.lines.count   #line count
+    assert_equal "\n", long_string[0,1]       #string start 0, length 1 = first character from the start.
   end
 
   def test_here_documents_can_also_handle_multiple_lines

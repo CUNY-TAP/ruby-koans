@@ -37,7 +37,7 @@ class AboutObjects < Neo::Koan
     assert_equal 201, 100.object_id      #01100100 -> 011001001
 
     # THINK ABOUT IT:
-    # What pattern do the object IDs for small integers follow? Answer: shifts one bit left.
+    # What pattern do the object IDs for small integers follow? Answer: shifts one bit left (basically multiply by 2). + 1 to make it always odd.
     #
     # ** I"m still a little unclear on this part, I'll continue to read into what Fixnum and VALUE are and how they relate to .object_id **
     #
