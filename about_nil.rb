@@ -17,7 +17,7 @@ class AboutNil < Neo::Koan
 
       # What message was attached to the exception?
       # (HINT: replace __ with part of the error message.)
-      assert_match(/some_method_nil_doesnt_know_about/, ex.message) #Expected "undefined method `some_method_nil_doesnt_know_about' for nil:NilClass" to match /__/
+      assert_match(/undefined method/, ex.message) #Expected "undefined method `some_method_nil_doesnt_know_about' for nil:NilClass" to match /__/
     end
   end
 
